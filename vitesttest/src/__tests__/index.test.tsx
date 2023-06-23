@@ -1,11 +1,11 @@
 import { expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import matchers from "@testing-library/jest-dom/matchers";
 import Header from "@/components/Header";
 
 expect.extend(matchers);
 
-test("Home", () => {
+test("button has correct initial color, and updates when clicked", () => {
   render(<Header />);
 
   // find a role
@@ -13,4 +13,14 @@ test("Home", () => {
 
   // button's color is red
   expect(colorButton).toHaveStyle({ backgroundColor: "rgb(255, 0, 0)" });
+
+  // click button
+  fireEvent.click(colorButton);
+
+  // expect the background color to be blue
+  expect(colorButton).toHaveStyle({ backgroundColor: "rgb(0, 0, 255)" });
+
+  // expect the button text to be 'Change to red'
+
+  expect(colorButton).toHaveTextContent("Change to red");
 });
