@@ -1,12 +1,12 @@
 import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import matchers from "@testing-library/jest-dom/matchers";
-import Home from "@/app/page";
+import Header from "@/components/Header";
 
 expect.extend(matchers);
 
 test("Home", () => {
-  render(<Home />);
+  render(<Header />);
 
   // find a role
   const colorButton = screen.getByRole("button", { name: "Change to blue" });
