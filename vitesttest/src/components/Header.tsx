@@ -9,7 +9,7 @@ export default function Header() {
   const newButtonColor = buttonColor === "red" ? "blue" : "red";
 
   const buttonHandler = () => {
-    setButtonColor("blue");
+    setButtonColor(newButtonColor);
   };
 
   return (
@@ -17,6 +17,7 @@ export default function Header() {
       <button style={{ backgroundColor: buttonColor }} onClick={buttonHandler}>
         Change to {newButtonColor}
       </button>
+      <input type={"checkbox"}></input>
     </div>
   );
 }
