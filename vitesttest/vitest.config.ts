@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src"), // src폴더 안에 __test__ 폴더 생성
+      "@": resolve(__dirname, "./src"),
     },
   },
   test: {
